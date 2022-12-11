@@ -6,6 +6,7 @@ import study.board.entity.Board;
 import study.board.repository.BoardRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,4 +23,7 @@ public class BoardService {
         return boardRepository.findAll();
     }
 
+    public Board boardView(Integer id){
+        return boardRepository.findById(id).get();
+    }
 }
